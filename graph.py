@@ -55,4 +55,4 @@ class Graph:
             connections = len(self.adj_list[key])
             n_edges += connections
 
-        return connections
+        return n_edges

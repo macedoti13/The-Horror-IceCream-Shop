@@ -11,6 +11,7 @@ def main():
     graph.add_edge("graviola", "maca_verde")
     graph.add_edge("graviola", "kiwi")
     graph.print_adj_list()
+    print(graph.n_two_nodes_edges())
 
 if __name__ == "__main__":
     main()
