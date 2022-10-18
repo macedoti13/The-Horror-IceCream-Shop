@@ -60,7 +60,7 @@ class Graph:
 
 
     def n_three_nodes_edges(self) -> int:
-        """Calculates the amount of combinations that can be made with three connected nodes
+        """Calculates the amount of combinations that can be made with three connected nodes.
 
         Returns:
             int: amount of combinations.
@@ -78,10 +78,43 @@ class Graph:
 
 
 def read_txt(file: str) -> Graph:
+    """Reads a .txt file and creates a graph from it. The file must be in the 
+       following format:
+
+       "node_name -> node_name"
+
+    Args:
+        file (str): path of the file.
+
+    Returns:
+        Graph: graph created from the file.
+    """    
+    nodes = []
+    edges = []
+
     with open(file) as f:
         # reading all lines in the file 
         lines = f.readlines()
 
+        # iterates through each line, getting the nodes and the edges 
         for line in lines:
-            h = line.split(' ')
-            h
+            content = line.split(' ')
+            
+            # adds first node in the nodes list (only if not already there)
+            if content[0] not in nodes: 
+                nodes.append(content[0])
+            # adds second node in the nodes list (only if not already there)
+            if content[2] not in nodes:
+                nodes.append(content[2].split('\n')[0])
+            
+            # creates and edge for the nodes
+            edges.append(tuple([content[0], content[2].split('\n')[0]]))
+    
+    # creates graph object with the nodes
+    graph = Graph(nodes, directed=True)
+
+    # creates the edges between the nodes 
+    for edge in edges:
+        graph.add_edge(edge[0], edge[1])
+
+    return graph
