@@ -14,7 +14,7 @@ class Graph:
         self.directed = directed
 
         # adjacency list definition
-        self.adj_list = {node: list() for node in range(len(self.nodes))}
+        self.adj_list = {node: list() for node in nodes}
 
     
     def add_edge(self, node1: str, node2: str):
