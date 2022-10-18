@@ -41,11 +41,12 @@ class Graph:
             print(f"node {key}: {self.adj_list[key]}")
 
 
-    def n_two_nodes_edges(self):
+    def n_two_nodes_edges(self) -> int:   
         """Calculates the amount of edges in the graph. 
 
+
         Returns:
-            int: number of edges between two nodes in the graph.
+            int: Amount of connections.
         """        
         # number of edges
         n_edges = 0 
@@ -56,3 +57,23 @@ class Graph:
             n_edges += connections
 
         return n_edges
+
+
+    def n_three_nodes_edges(self) -> int:
+        """Calculates the amount of combinations that can be made with three connected nodes
+
+        Returns:
+            int: amount of combinations.
+        """        
+        # number of connections
+        n_conncetions = 0
+
+        # iterates through every node
+        for i in self.adj_list.keys():
+            for j in self.adj_list[i]:
+                n_2d_edges = len(self.adj_list[j])
+
+            n_conncetions += n_2d_edges
+
+        return n_conncetions
+        
