@@ -39,3 +39,20 @@ class Graph:
         """Prints the adjancency list."""
         for key in self.adj_list.keys():
             print(f"node {key}: {self.adj_list[key]}")
+
+
+    def n_two_nodes_edges(self):
+        """Calculates the amount of edges in the graph. 
+
+        Returns:
+            int: number of edges between two nodes in the graph.
+        """        
+        # number of edges
+        n_edges = 0 
+
+        # iterates through every node
+        for key in self.adj_list.keys():
+            connections = len(self.adj_list[key])
+            n_edges += connections
+
+        return connections
