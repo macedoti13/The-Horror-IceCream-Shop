@@ -33,3 +33,9 @@ class Graph:
         # edge from node2 to node1 (only if not directed)
         if not self.directed:
             self.adj_list[node2].append(node1)
+
+    
+    def print_adj_list(self):
+        """Prints the adjancency list."""
+        for key in self.adj_list.keys():
+            print(f"node {key}: {self.adj_list[key]}")
