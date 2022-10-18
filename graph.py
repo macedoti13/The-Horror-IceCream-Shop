@@ -75,3 +75,13 @@ class Graph:
                 n_conncetions += n_2d_edges
 
         return n_conncetions
+
+
+def read_txt(file: str) -> Graph:
+    with open(file) as f:
+        # reading all lines in the file 
+        lines = f.readlines()
+
+        for line in lines:
+            h = line.split(' ')
+            h
