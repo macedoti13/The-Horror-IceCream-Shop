@@ -72,8 +72,6 @@ class Graph:
         for i in self.adj_list.keys():
             for j in self.adj_list[i]:
                 n_2d_edges = len(self.adj_list[j])
-
-            n_conncetions += n_2d_edges
+                n_conncetions += n_2d_edges
 
         return n_conncetions
-        
