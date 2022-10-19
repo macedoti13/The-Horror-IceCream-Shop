@@ -48,6 +48,9 @@ class Graph:
         Returns:
             int: Amount of connections.
         """        
+        # open output file
+        f = open('2FlavorsCombinations.txt', 'w')
+
         # number of edges
         n_edges = 0 
 
@@ -57,9 +60,11 @@ class Graph:
             n_edges += connections
 
             # write all possible combinations in output file
-            with open('2FlavorsCombinations.txt', 'w') as f:
-                for node in self.adj_list[key]:
-                    f.write(f'{key} -> {node}\n')
+            for node in self.adj_list[key]:
+                f.write(f'{key} -> {node}\n')
+
+        f.write(f'\nTotal number of possible 2 flavors combinations: {n_edges}')
+        f.close()
 
         return n_edges
 
@@ -70,6 +75,9 @@ class Graph:
         Returns:
             int: amount of combinations.
         """        
+        # creates new output file
+        f = open('3FlavorsCombinations.txt', 'w')
+
         # number of connections
         n_conncetions = 0
 
@@ -80,9 +88,11 @@ class Graph:
                 n_conncetions += n_2d_edges
 
                 # write all possible combinations in output file
-                with open('3FlavorsCombinations.txt', 'w') as f:
-                    for node in self.adj_list[j]:
-                        f.write(f'{i} -> {j} -> {node}\n')
+                for node in self.adj_list[j]:
+                    f.write(f'{i} -> {j} -> {node}\n')
+
+        f.write(f'\nTotal number of possible 3 flavors combinations: {n_conncetions}')
+        f.close()
 
         return n_conncetions
 
