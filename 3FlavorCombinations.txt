@@ -1,0 +1,18 @@
+menta -> creme_russo -> coco_queimado
+menta -> creme_russo -> pitanga
+menta -> creme_russo -> morango_e_nata
+creme_russo -> pitanga -> morango_e_nata
+creme_russo -> morango_e_nata -> chiclete
+queijo -> creme_russo -> coco_queimado
+queijo -> creme_russo -> pitanga
+queijo -> creme_russo -> morango_e_nata
+queijo -> morango_e_nata -> chiclete
+pitanga -> morango_e_nata -> chiclete
+limão -> queijo -> creme_russo
+limão -> queijo -> morango_e_nata
+limão -> queijo -> chiclete
+limão -> abóbora -> coco_queimado
+limão -> abóbora -> chiclete
+limão -> pitanga -> morango_e_nata
+
+Total number of possible 3 flavors combinations: 16

@@ -63,6 +63,7 @@ class Graph:
             for node in self.adj_list[key]:
                 f.write(f'{key} -> {node}\n')
 
+        # write number of combinations and closes the file
         f.write(f'\nTotal number of possible 2 flavors combinations: {n_edges}')
         f.close()
 
@@ -91,6 +92,7 @@ class Graph:
                 for node in self.adj_list[j]:
                     f.write(f'{i} -> {j} -> {node}\n')
 
+        # write number of combinations and closes the file
         f.write(f'\nTotal number of possible 3 flavors combinations: {n_conncetions}')
         f.close()
 

@@ -1,0 +1,19 @@
+amendoim -> coco_queimado
+menta -> creme_russo
+menta -> chiclete
+creme_russo -> coco_queimado
+creme_russo -> pitanga
+creme_russo -> morango_e_nata
+queijo -> creme_russo
+queijo -> morango_e_nata
+queijo -> chiclete
+morango_e_nata -> chiclete
+abóbora -> coco_queimado
+abóbora -> chiclete
+pitanga -> morango_e_nata
+limão -> queijo
+limão -> abóbora
+limão -> coco_queimado
+limão -> pitanga
+
+Total number of possible 2 flavors combinations: 17
