@@ -56,6 +56,11 @@ class Graph:
             connections = len(self.adj_list[key])
             n_edges += connections
 
+            # write all possible combinations in output file
+            with open('2FlavorsCombinations.txt', 'w') as f:
+                for node in self.adj_list[key]:
+                    f.write(key,'->',node,'\n')
+
         return n_edges
 
 
@@ -73,6 +78,11 @@ class Graph:
             for j in self.adj_list[i]:
                 n_2d_edges = len(self.adj_list[j])
                 n_conncetions += n_2d_edges
+
+                # write all possible combinations in output file
+                with open('3FlavorsCombinations.txt', 'w') as f:
+                    for node in self.adj_list[j]:
+                        f.write(i,'->',j,'->',node,'\n')
 
         return n_conncetions
 
