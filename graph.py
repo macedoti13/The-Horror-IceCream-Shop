@@ -49,7 +49,7 @@ class Graph:
             int: Amount of connections.
         """        
         # open output file
-        f = open('2FlavorsCombinations.txt', 'w')
+        f = open('2FlavorCombinations.txt', 'w')
 
         # number of edges
         n_edges = 0 
@@ -76,7 +76,7 @@ class Graph:
             int: amount of combinations.
         """        
         # creates new output file
-        f = open('3FlavorsCombinations.txt', 'w')
+        f = open('3FlavorCombinations.txt', 'w')
 
         # number of connections
         n_conncetions = 0
