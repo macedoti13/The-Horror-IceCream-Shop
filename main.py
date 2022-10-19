@@ -1,7 +1,7 @@
 import graph as g
 
 def main():
-    graph = g.read_txt('test_files/casocohen60.txt')
+    graph = g.read_txt('test_files/casocohen10.txt')
     print(graph.n_two_nodes_edges())
     print(graph.n_three_nodes_edges())
     graph.print_adj_list()
