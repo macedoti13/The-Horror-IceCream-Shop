@@ -83,7 +83,8 @@ class Graph:
 
 
     def n_two_nodes_edges(self) -> int:   
-        """Calculates the amount of edges in the graph. 
+        """Calculates the amount of combinations that can be made with two different connected nodes 
+           in the graph. Uses bfs to check if there's a path between two nodes and sums 1 if it does.  
 
 
         Returns:
@@ -95,11 +96,17 @@ class Graph:
         # number of edges
         n_conncetions = 0 
 
+        # for every source in the graph 
         for source in self.adj_list.keys():
+            # for every destination in the graph
             for destination in self.adj_list.keys():
+                # if destination is not the source
                 if destination != source:
+                    # if the destination in reachable from the source
                     if self.isReachable(source, destination):
+                        # adds a new connection
                         n_conncetions += 1
+                        # prints connection in the output file
                         f.write(f'{source} -> {destination}\n')
 
         f.close()
@@ -108,7 +115,9 @@ class Graph:
 
 
     def n_three_nodes_edges(self) -> int:
-        """Calculates the amount of combinations that can be made with three connected nodes.
+        """Calculates the amount of combinations that can be made with three connected nodes 
+           Uses bfs to check if there's a path between two nodes and if it does, checks how many 
+           nodes can be reached by it. Presents the total number if the end. 
 
         Returns:
             int: amount of combinations.
@@ -119,18 +128,24 @@ class Graph:
         # number of connections
         n_conncetions = 0
 
-        # --------------
+        # for each source in the graph
         for source in self.adj_list.keys():
+            # for each destination in the graph 
             for destination in self.adj_list.keys():
-                if destination == source:
-                    pass
-                elif self.isReachable(source, destination):
-                    for next_destination in self.adj_list.keys():
-                        if next_destination not in [source, destination]:
-                            if self.isReachable(destination, next_destination):
-                                f.write(f'{source} -> {destination} -> {next_destination}\n')
-                                n_conncetions += 1
-        # ---------------
+                # if source is not the destination
+                if destination != source:
+                    # if the destination can be reached from the source 
+                    if self.isReachable(source, destination):
+                        # for each next_destination in the graph
+                        for next_destination in self.adj_list.keys():
+                            # if next_destination is not the source or the previous destination 
+                            if next_destination not in [source, destination]:
+                                # if the next destination can be reached from the previous destionation 
+                                if self.isReachable(destination, next_destination):
+                                    # writes in the output file
+                                    f.write(f'{source} -> {destination} -> {next_destination}\n')
+                                    # adds a new connections
+                                    n_conncetions += 1
 
         # write number of combinations and closes the file
         f.write(f'\nTotal number of possible 3 flavors combinations: {n_conncetions}')
