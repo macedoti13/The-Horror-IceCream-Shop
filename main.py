@@ -1,13 +1,11 @@
 import graph as g
 
 def main():
-    graph = g.read_txt('testfiles2/test.txt')
+    graph = g.read_txt('testfiles3/casoleonardo30.txt')
     print(f'The number of possible combinations of two flavors is: {graph.n_two_nodes_edges()}')
     print(f'The number of possible combinations of three flavores is: {graph.n_three_nodes_edges()}')
-    #print('\nGraph:')
-    #graph.print_adj_list()
-    #print(graph.isReachable('choolate_brano', 'papaya_om_assis'))
-    #print(graph.nodes)
+    print('\nGraph:')
+    graph.print_adj_list()
 
 if __name__ == "__main__":
     main()
