@@ -44,27 +44,41 @@ class Graph:
             print(f"node {key}: {self.adj_list[key]}")
 
 
-    def isReachable(self, s, d):
+    def isReachable(self, s: str, d: str) -> bool:
+        """Checks if a node d is reachable starting from another node s. 
 
+        Args:
+            s (str): node where the algorithm starts.
+            d (str): node where the algorithm wants to end.
+
+        Returns:
+            bool: True if there is a path between from s to d, False otherwise.
+        """        
+        # creates visited and queue lists
         visited = []
-
         queue = []
 
+        # adds source in visited and queue list
         queue.append(s)
         visited.append(s)
 
+        # runs untill queue is empty
         while queue:
 
+            # removes the first element from queue
             n = queue.pop(0)
 
+            # if element is the destination, retunrs true
             if n == d:
                 return True
 
+            # if not, for every node that is connected to it and hasn't been visited, appends in the queue and mark it as visited
             for i in self.adj_list[n]:
                 if i not in visited:
                     queue.append(i)
                     visited.append(i)
 
+        # returns false if not path was founded
         return False
 
 
