@@ -93,26 +93,18 @@ class Graph:
         f = open('2FlavorCombinations.txt', 'w')
 
         # number of edges
-        n_edges = 0 
+        n_conncetions = 0 
 
-        # ----------
+        for source in self.adj_list.keys():
+            for destination in self.adj_list.keys():
+                if destination != source:
+                    if self.isReachable(source, destination):
+                        n_conncetions += 1
+                        f.write(f'{source} -> {destination}\n')
 
-        # iterates through every node
-        for key in self.adj_list.keys():
-            connections = len(self.adj_list[key])
-            n_edges += connections
-
-            # write all possible combinations in output file
-            for node in self.adj_list[key]:
-                f.write(f'{key} -> {node}\n')
-
-        # --------------
-
-        # write number of combinations and closes the file
-        f.write(f'\nTotal number of possible 2 flavors combinations: {n_edges}')
         f.close()
 
-        return n_edges
+        return n_conncetions
 
 
     def n_three_nodes_edges(self) -> int:
@@ -128,17 +120,16 @@ class Graph:
         n_conncetions = 0
 
         # --------------
-
-        # iterates through every node
-        for i in self.adj_list.keys():
-            for j in self.adj_list[i]:
-                n_2d_edges = len(self.adj_list[j])
-                n_conncetions += n_2d_edges
-
-                # write all possible combinations in output file
-                for node in self.adj_list[j]:
-                    f.write(f'{i} -> {j} -> {node}\n')
-
+        for source in self.adj_list.keys():
+            for destination in self.adj_list.keys():
+                if destination == source:
+                    pass
+                elif self.isReachable(source, destination):
+                    for next_destination in self.adj_list.keys():
+                        if next_destination not in [source, destination]:
+                            if self.isReachable(destination, next_destination):
+                                f.write(f'{source} -> {destination} -> {next_destination}\n')
+                                n_conncetions += 1
         # ---------------
 
         # write number of combinations and closes the file

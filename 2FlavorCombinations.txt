@@ -1,0 +1,8 @@
+choolate_brano -> papaya_om_assis
+choolate_brano -> graviola
+choolate_brano -> kiwi
+choolate_brano -> maçã_verde
+papaya_om_assis -> kiwi
+papaya_om_assis -> maçã_verde
+graviola -> kiwi
+graviola -> maçã_verde

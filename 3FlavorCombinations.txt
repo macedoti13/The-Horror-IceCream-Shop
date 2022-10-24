@@ -1,0 +1,6 @@
+choolate_brano -> papaya_om_assis -> kiwi
+choolate_brano -> papaya_om_assis -> maçã_verde
+choolate_brano -> graviola -> kiwi
+choolate_brano -> graviola -> maçã_verde
+
+Total number of possible 3 flavors combinations: 4
