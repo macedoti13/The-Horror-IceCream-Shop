@@ -1,6 +1,0 @@
-pavê -> napolitano
-nata -> melão
-chocolate_branco -> açaí
-goiaba -> creme
-
-Total number of possible 2 flavors combinations: 4

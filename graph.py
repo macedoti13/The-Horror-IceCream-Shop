@@ -7,8 +7,11 @@ class Graph:
             nodes (list): list containing the name of the nodes. 
             directed (bool, optional): Indicates if the graph is of type directed. Defaults to True.
         """              
-        # number of nodes definition
+        # nodes in the graph
         self.nodes = nodes
+
+        # number of nodes
+        self.v = len(nodes)
         
         # type of graph definition
         self.directed = directed
@@ -39,6 +42,30 @@ class Graph:
         """Prints the adjancency list."""
         for key in self.adj_list.keys():
             print(f"node {key}: {self.adj_list[key]}")
+
+
+    def isReachable(self, s, d):
+
+        visited = []
+
+        queue = []
+
+        queue.append(s)
+        visited.append(s)
+
+        while queue:
+
+            n = queue.pop(0)
+
+            if n == d:
+                return True
+
+            for i in self.adj_list[n]:
+                if i not in visited:
+                    queue.append(i)
+                    visited.append(i)
+
+        return False
 
 
     def n_two_nodes_edges(self) -> int:   
