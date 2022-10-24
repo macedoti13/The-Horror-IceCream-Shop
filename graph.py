@@ -9,9 +9,6 @@ class Graph:
         """              
         # nodes in the graph
         self.nodes = nodes
-
-        # number of nodes
-        self.v = len(nodes)
         
         # type of graph definition
         self.directed = directed
