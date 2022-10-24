@@ -54,6 +54,8 @@ class Graph:
         # number of edges
         n_edges = 0 
 
+        # ----------
+
         # iterates through every node
         for key in self.adj_list.keys():
             connections = len(self.adj_list[key])
@@ -62,6 +64,8 @@ class Graph:
             # write all possible combinations in output file
             for node in self.adj_list[key]:
                 f.write(f'{key} -> {node}\n')
+
+        # --------------
 
         # write number of combinations and closes the file
         f.write(f'\nTotal number of possible 2 flavors combinations: {n_edges}')
@@ -82,6 +86,8 @@ class Graph:
         # number of connections
         n_conncetions = 0
 
+        # --------------
+
         # iterates through every node
         for i in self.adj_list.keys():
             for j in self.adj_list[i]:
@@ -91,6 +97,8 @@ class Graph:
                 # write all possible combinations in output file
                 for node in self.adj_list[j]:
                     f.write(f'{i} -> {j} -> {node}\n')
+
+        # ---------------
 
         # write number of combinations and closes the file
         f.write(f'\nTotal number of possible 3 flavors combinations: {n_conncetions}')
