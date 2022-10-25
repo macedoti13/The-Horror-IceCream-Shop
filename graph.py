@@ -106,6 +106,7 @@ class Graph:
                         # prints connection in the output file
                         f.write(f'{source} -> {destination}\n')
 
+        f.write(f'\nTotal number of possible 2 flavors combinations: {n_conncetions}')
         f.close()
 
         return n_conncetions
