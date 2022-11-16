@@ -1,5 +1,4 @@
 import graph as g
-from datetime import datetime
 
 def main():
     graph = g.read_txt('testfiles/casoleonardo60.txt')
